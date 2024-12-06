@@ -1,4 +1,13 @@
-# signature
+# Vue手寫板
+
+### 重點
+- 改善筆跡鋸齒狀
+- 手持Apple Pencil時不會偵測到手指觸摸事件
+- 簽名處隨著螢幕撐滿螢幕
+- 能清除畫跡、能存檔成png、能存成base64
+
+### 其他套件
+- 搭配element plus開發，但其實不用這個也可以
 
 ## Project setup
 ```
@@ -20,5 +29,4 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
