@@ -8,7 +8,6 @@
       <el-radio-button label="Apple Pencil" value="pencil" />
       <el-radio-button label="滑鼠" value="mouse" />
     </el-radio-group>
-
     <div class="signature-pad">
       <canvas ref="drawCanvas" @mousedown.prevent="startDrawing" @mousemove.prevent="draw"
         @mouseup.prevent="stopDrawing" @mouseout.prevent="stopDrawing" @touchstart.prevent="startDrawing"
@@ -40,7 +39,7 @@
   const points = ref([]); // 用來存放繪圖點
   const lastPoint = ref({ x: 0, y: 0 });
 
-  // const screenHeight = ref(0)
+
 
   onMounted(() => {
     window.addEventListener("resize", setCanvas);
@@ -98,16 +97,12 @@
           ElMessage({ type: "error", message: '請選擇正確的裝置類型' });
           return;
         }
-        if (touchType === 'stylus' && signType.value === 'finger') {
-          ElMessage({ type: "error", message: '請選擇正確的裝置類型' });
-          return;
-        }
+        if (touchType === 'stylus' && signType.value === 'finger') return;
 
         clientX = e.touches[0].clientX;
         clientY = e.touches[0].clientY;
       } else {
         ElMessage({ type: "error", message: '請選擇正確的裝置類型' });
-
         return;
       }
     } else {
